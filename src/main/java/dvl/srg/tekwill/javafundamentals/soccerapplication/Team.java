@@ -5,12 +5,15 @@ package dvl.srg.tekwill.javafundamentals.soccerapplication;
  */
 public class Team {
 
+    private static int INITIAL_NR_PLAYERS = 11;
+
     private String name;
     private Player[] players;
+    private int numberOfPlayers;
 
-    public Team(String name, Player[] players) {
+    public Team(String name) {
         this.name = name;
-        this.players = players;
+        this.players = new Player[INITIAL_NR_PLAYERS];
     }
 
     public String getName() {
@@ -19,8 +22,36 @@ public class Team {
 
     public void printTeamPlayersNames() {
         System.out.println(name + ":");
-        for (int i = 0; i < players.length; ++i) {
+        for (int i = 0; i < numberOfPlayers; ++i) {
             System.out.println(players[i].getName());
         }
+    }
+
+    public void addPlayer(Player player) {
+        if (numberOfPlayers < players.length) {
+            players[numberOfPlayers++] = player;
+        } else {
+            Player[] playersTemp = players;
+            players = new Player[players.length * 2];
+
+            for (int i = 0; i < playersTemp.length; i++) {
+                players[i] = playersTemp[i];
+            }
+
+            players[numberOfPlayers++] = player;
+        }
+    }
+
+    public boolean removePlayer(Player player) {
+        for (int i = 0; i < numberOfPlayers; i++) {
+            if (players[i].equals(player)) {
+                for (int j = i; i < numberOfPlayers - 1; j++) {
+                    players[j] = players[j + 1];
+                }
+                numberOfPlayers--;
+                return true;
+            }
+        }
+        return false;
     }
 }
