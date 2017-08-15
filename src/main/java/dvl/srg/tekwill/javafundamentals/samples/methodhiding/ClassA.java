@@ -13,5 +13,8 @@ public class ClassA {
 
     int y = 20;
 
+    void showMessage() {
+        System.out.println("Message from ClassA");
+    }
 
 }

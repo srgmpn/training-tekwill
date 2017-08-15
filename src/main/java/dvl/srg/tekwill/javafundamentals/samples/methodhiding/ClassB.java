@@ -13,6 +13,11 @@ public class ClassB extends ClassA {
 
     int y = 40;
 
+    @Override
+    void showMessage() {
+        System.out.println("Message from ClassB");
+    }
+
     public static void main(String[] args) {
         ClassA a = new ClassA();
         ClassA ab = new ClassB();
@@ -23,12 +28,16 @@ public class ClassB extends ClassA {
         System.out.println("a.X = " + ab.X);
         System.out.println("a.X = " + b.X);
         System.out.println("--------------------------------");
-        System.out.println("a.X = " + a.y);
-        System.out.println("a.X = " + ab.y);
-        System.out.println("a.X = " + b.y);
+        System.out.println("a.y = " + a.y);
+        System.out.println("a.y = " + ab.y);
+        System.out.println("a.y = " + b.y);
         System.out.println("--------------------------------");
         a.run();
         ab.run();
         b.run();
+        System.out.println("--------------------------------");
+        a.showMessage();
+        ab.showMessage();
+        b.showMessage();
     }
 }
