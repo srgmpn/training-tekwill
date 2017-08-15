@@ -17,4 +17,8 @@ public class ClassA {
         System.out.println("Message from ClassA");
     }
 
+    int getY() {
+        return y;
+    }
+
 }

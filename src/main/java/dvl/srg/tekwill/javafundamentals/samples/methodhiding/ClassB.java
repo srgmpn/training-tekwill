@@ -18,26 +18,38 @@ public class ClassB extends ClassA {
         System.out.println("Message from ClassB");
     }
 
+    @Override
+    int getY() {
+        return y;
+    }
+
     public static void main(String[] args) {
         ClassA a = new ClassA();
         ClassA ab = new ClassB();
         ClassB b = new ClassB();
 
+        System.out.println("Static");
         System.out.println("--------------------------------");
         System.out.println("a.X = " + a.X);
         System.out.println("a.X = " + ab.X);
         System.out.println("a.X = " + b.X);
         System.out.println("--------------------------------");
+        a.run();
+        ab.run();
+        b.run();
+        System.out.println("Instance:");
+        System.out.println("--------------------------------");
         System.out.println("a.y = " + a.y);
         System.out.println("a.y = " + ab.y);
         System.out.println("a.y = " + b.y);
         System.out.println("--------------------------------");
-        a.run();
-        ab.run();
-        b.run();
+        System.out.println("a.getY = " + a.getY());
+        System.out.println("ab.getY = " + ab.getY());
+        System.out.println("b.getY = " + b.getY());
         System.out.println("--------------------------------");
         a.showMessage();
         ab.showMessage();
         b.showMessage();
+
     }
 }
