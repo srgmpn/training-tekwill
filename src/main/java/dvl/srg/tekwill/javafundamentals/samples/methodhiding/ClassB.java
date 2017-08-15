@@ -28,8 +28,9 @@ public class ClassB extends ClassA {
         ClassA ab = new ClassB();
         ClassB b = new ClassB();
 
-        System.out.println("Static");
-        System.out.println("--------------------------------");
+        System.out.println("+================================");
+        System.out.println("|            Static:");
+        System.out.println("+================================");
         System.out.println("a.X = " + a.X);
         System.out.println("a.X = " + ab.X);
         System.out.println("a.X = " + b.X);
@@ -37,8 +38,9 @@ public class ClassB extends ClassA {
         a.run();
         ab.run();
         b.run();
-        System.out.println("Instance:");
-        System.out.println("--------------------------------");
+        System.out.println("+================================");
+        System.out.println("|            Instance:");
+        System.out.println("+================================");
         System.out.println("a.y = " + a.y);
         System.out.println("a.y = " + ab.y);
         System.out.println("a.y = " + b.y);
